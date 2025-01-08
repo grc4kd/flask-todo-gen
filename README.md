@@ -12,3 +12,8 @@ The current results look promising. I'll have to keep track of the project in th
 
 Without any more background, here is an inclusive list of the GPT prompts that I've used so far:
 1. "Build a simple todo list web application using Flask for the backend and SQLite for the database. For databases, use only SQLite and don't try any other databases yet."
+2. "Write a python script to connect to an in-memory-only SQLite database using SQLAlchemy. You should use `import sqlalchemy` and `python`."
+3. "How do I create a Flask app and pass in a `sqlalchemy` database to a class constructor to load at runtime? I would like to use a method named `Column` in particular, to define a schema for my `sqlite` database."
+
+At this point I reached a position where I recognized SQLAlchemy has a newer constructor. I also recall it having many different methods for a schema-bound setup. I decided to pursue creating a database engine for use in the Flask application by the usual means, documentation and the Getting Started tutorials for SQLAlchemy.
+
