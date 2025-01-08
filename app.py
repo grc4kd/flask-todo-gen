@@ -45,19 +45,23 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
-   
+    content = request.form["content"]
+    with Session(engine) as session:
+        new_todo = Todo(label=content)
+        session.add(new_todo)
+        session.commit()
     return redirect("/")
 
 
 @app.route("/delete/<int:todo_id>", methods=["POST"])
 def delete(todo_id):
-
+    
     return redirect("/")
 
 
 @app.route("/update/<int:todo_id>", methods=["POST"])
 def update(todo_id):
-
+    
     return redirect("/")
 
 
