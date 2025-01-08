@@ -45,28 +45,19 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
-    content = request.form["content"]
-    with Session(engine) as session:
-        new_todo = Todo(label=content)
-        session.add(new_todo)
-        session.commit()
+   
     return redirect("/")
 
 
 @app.route("/delete/<int:todo_id>", methods=["POST"])
 def delete(todo_id):
-    todo = Todo.query.get(todo_id)
-    db.session.delete(todo)
-    db.session.commit()
+
     return redirect("/")
 
 
 @app.route("/update/<int:todo_id>", methods=["POST"])
 def update(todo_id):
-    completed = request.form["completed"] == "True"
-    todo = Todo.query.get(todo_id)
-    todo.completed = completed
-    db.session.commit()
+
     return redirect("/")
 
 
